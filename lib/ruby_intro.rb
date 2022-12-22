@@ -61,10 +61,20 @@ end
 
 class BookInStock
 # YOUR CODE HERES
+  def initialize(_isbn,_price)
+
+    @isbn=_isbn
+    @price=_price
+  end
+  def price_as_string()
+    return "$#{price}"
+  end
+end
 puts max_2_sum([1,2,3,4,5])
 puts sum_to_n?([1,2,3,4,5],3)
 puts starts_with_consonant?("app")
 puts starts_with_consonant?("spa")
 puts binary_multiple_of_4?("1100")
 puts binary_multiple_of_4?("1110")
-end
+
+raise_error(ArgumentError, "missing keywords")
