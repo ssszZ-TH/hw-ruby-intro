@@ -31,7 +31,7 @@ end
 
 def hello(name)
   # YOUR CODE HERE
-  puts "hello #{name}"
+  return "Hello, #{name}"
 end
 
 def starts_with_consonant? s #เริ่มต้นด้วยด้วยอักษร a e i o u
@@ -41,10 +41,10 @@ def starts_with_consonant? s #เริ่มต้นด้วยด้วย�
   is_valid = false
   valid_start.each{|x|
     if x==s[0]
-      return true
+      return false
     end
   }
-return false
+return true
 end
 
 def binary_multiple_of_4? s ## asume that input is binary string
@@ -70,11 +70,3 @@ class BookInStock
     return "$#{price}"
   end
 end
-puts max_2_sum([1,2,3,4,5])
-puts sum_to_n?([1,2,3,4,5],3)
-puts starts_with_consonant?("app")
-puts starts_with_consonant?("spa")
-puts binary_multiple_of_4?("1100")
-puts binary_multiple_of_4?("1110")
-
-raise_error(ArgumentError, "missing keywords")
