@@ -34,17 +34,14 @@ def hello(name)
   return "Hello, #{name}"
 end
 
-def starts_with_consonant? s #เริ่มต้นด้วยด้วยอักษร a e i o u
+def starts_with_consonant? s #เริ่มต้นด้วยด้วยอักษร
   # YOUR CODE HERE 
   s.downcase!
-  valid_start=["a","e","i","o","u"]
-  is_valid = false
-  valid_start.each{|x|
-    if x==s[0]
-      return false
-    end
-  }
-return true
+  return false if s.length == 0
+  not_con=["a","e","i","o","u"]
+  not_con.each{|x| return false if x==s[0]}
+  return true
+
 end
 
 def binary_multiple_of_4? s ## asume that input is binary string
@@ -62,9 +59,11 @@ end
 class BookInStock
 # YOUR CODE HERES
   def initialize(_isbn,_price)
-
     @isbn=_isbn
     @price=_price
+    if @price <= 0 or @isbn.empty? 
+      raise ArgumentError
+    end
   end
   def price_as_string()
     return "$#{price}"
