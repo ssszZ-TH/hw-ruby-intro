@@ -36,8 +36,9 @@ end
 
 def starts_with_consonant? s #เริ่มต้นด้วยด้วยอักษร
   # YOUR CODE HERE 
-  s.downcase!
+  return false if s.nil?
   return false if s.length == 0
+  s.downcase!
   not_con=["a","e","i","o","u"]
   not_con.each{|x| return false if x==s[0]}
   return true
